@@ -1,4 +1,4 @@
-from plugin.plugin import InvenTreePlugin
+from plugin import InvenTreePlugin
 from part.models import Part
 
 class RemoveEmptyLinkPlugin(InvenTreePlugin):
