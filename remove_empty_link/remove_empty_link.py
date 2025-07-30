@@ -1,13 +1,13 @@
-# plugins/remove_empty_link.py
-
 from plugin import InvenTreePlugin
 from part.models import Part
 
 class RemoveEmptyLinkPlugin(InvenTreePlugin):
     NAME = "RemoveEmptyLinkPlugin"
-    DESCRIPTION = "Entfernt leere 'link'-Felder beim Speichern von Parts"
+    SLUG = "remove-empty-link"
+    TITLE = "Leere Links entfernen"
+    VERSION = "1.0"
+    DESCRIPTION = "Verhindert Fehler bei leeren link-Feldern"
 
     def pre_save_part(self, sender, instance: Part, data: dict, user, **kwargs):
-        # Falls 'link' ein leerer String ist, entfernen
-        if data.get('link', '').strip() == "":
-            data.pop('link')
+        if data.get("link", "").strip() == "":
+            data.pop("link")
