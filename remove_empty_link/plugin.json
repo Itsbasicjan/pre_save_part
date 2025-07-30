@@ -1,0 +1,4 @@
+{
+  "plugin": "plugin.RemoveEmptyLinkPlugin",
+  "version": "1.0"
+}
